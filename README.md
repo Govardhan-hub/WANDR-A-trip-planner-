@@ -1,4 +1,4 @@
-# 🌍 WANDR — Smart Travel Planner Website
+# 🌍 WANDR — A Trip Planner Website
 
 ##  About The Project
 
