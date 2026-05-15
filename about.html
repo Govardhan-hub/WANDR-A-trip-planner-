@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — WANDR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    body { 
+      padding-top: 72px; 
+    }
+    .about-hero {
+      background: linear-gradient(135deg, #0b1f3a 0%, #1a4480 60%, #1e65b8 100%);
+      padding: 90px 5% 64px; 
+      text-align: center; 
+      color: #ffff; 
+      position: relative; 
+      overflow: hidden;
+    }
+    .about-hero::before { 
+      content: '🌍'; 
+      position: absolute; 
+      right: 5%; 
+      top: 50%; 
+      transform: translateY(-50%); 
+      font-size: 192px; 
+      opacity: 0.05; 
+      pointer-events: none; 
+    }
+    .about-hero h1 { 
+      font-family: 'Playfair Display', Georgia, serif; 
+      font-size: clamp(33px, 5vw, 56px); 
+      font-weight: 900; 
+      margin-bottom: 16px; 
+    }
+    .about-hero p { 
+      color: rgba(255,255,255,0.75); 
+      font-size: 17px; 
+      max-width: 600px; 
+      margin: 0 auto; 
+    }
+    .about-badge { 
+      display: inline-block; 
+      background: rgba(249,115,22,0.2); 
+      border: 1px solid rgba(249,115,22,0.4); 
+      color: #fdba74; 
+      padding: 8px 16px; 
+      border-radius: 50px; 
+      font-size: 15px; 
+      font-weight: 600;; 
+      margin-bottom: 24px; 
+    }
+    .features-list { 
+      list-style: none; 
+      margin-top: 24px; 
+    }
+    .features-list li { 
+      display: flex; 
+      align-items: flex-start; 
+      gap: 12px; 
+      margin-bottom: 14px; 
+      font-size: 16px; 
+      color: #64748b; 
+      line-height: 1.5; 
+    }
+    .features-list li::before { 
+      content: '✓'; 
+      color: #3b82f6; 
+      font-weight: 700; 
+      flex-shrink: 0; 
+      margin-top: 1px; 
+    }
+  </style>
+</head>
+<body id="about-page">
+
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-logo" onclick="goHome()" style="cursor:pointer">🧭 WANDR</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="about-hero">
+  <div class="about-badge">🎓 End-Semester Project 2025</div>
+  <h1>About WANDR</h1>
+  <p>A modern, AI-powered travel planning platform built to make exploring the world effortless and intelligent.</p>
+</div>
+
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <div class="section-tag">Project Overview</div>
+      <h2>Reimagining Travel Planning with Artificial Intelligence</h2>
+      <p>WANDR is a full-featured frontend web application that demonstrates how modern web technologies can be combined with AI-inspired logic to create intuitive, beautiful, and functional travel tools.</p>
+      <p>The platform allows users to explore curated destinations, filter by travel categories, select famous places, enter preferences, and receive a fully personalized day-by-day itinerary — complete with budget estimates, hotel recommendations, and activity suggestions.</p>
+      <div class="features-list">
+        <li>Smart AI itinerary generation based on user preferences</li>
+        <li>Dynamic category filtering with animated country cards</li>
+        <li>Interactive place selection system</li>
+        <li>Responsive design for mobile, tablet and desktop</li>
+        <li>Dark mode with persistent theme storage</li>
+        <li>Scroll reveal animations and smooth transitions</li>
+        <li>Budget breakdown with visual analytics</li>
+      </div>
+      <div class="tech-tags" style="margin: top 32px;">
+        <span class="tech-tag">HTML5</span>
+        <span class="tech-tag">CSS3</span>
+        <span class="tech-tag">JavaScript ES6+</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="team-section">
+  <div class="section-header">
+    <div class="section-tag">The Team</div>
+    <h2 class="section-title">Meet the Developers</h2>
+    <p class="section-sub">The students behind this end-semester project.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <div class="team-avatar">👨‍💻</div>
+      <div class="team-name">Vikrant</div>
+      <div class="team-role">CSS HTML</div>
+    </div>
+    <div class="team-card reveal reveal-delay-1">
+      <div class="team-avatar">👩‍🎨</div>
+      <div class="team-name">Govardhan</div>
+      <div class="team-role">HTML JAVASCRIPT</div>
+    </div>
+    <div class="team-card reveal reveal-delay-2">
+      <div class="team-avatar">👨‍🔬</div>
+      <div class="team-name">Sushanth</div>
+      <div class="team-role">HTML</div>
+    </div>
+    <div class="team-card reveal reveal-delay-3">
+      <div class="team-avatar">👩‍💼</div>
+      <div class="team-name">Sathvik</div>
+      <div class="team-role">CSS JAVASCRIPT</div>
+    </div>
+  </div>
+</section>
+
+<!-- Objectives -->
+<section class="objectives-section">
+  <div class="section-header">
+    <div class="section-tag">Goals</div>
+    <h2 class="section-title">Project Objectives</h2>
+    <p class="section-sub">What we set out to achieve with this end-semester project.</p>
+  </div>
+  <div class="objectives-grid">
+    <div class="obj-card reveal">
+      <div class="obj-num">01</div>
+      <div class="obj-text"><h4>Modern UI Development</h4><p>Build a production-grade, visually impressive frontend that demonstrates mastery of HTML, CSS and JavaScript.</p></div>
+    </div>
+    <div class="obj-card reveal reveal-delay-1">
+      <div class="obj-num">02</div>
+      <div class="obj-text"><h4>AI-Inspired Logic</h4><p>Implement smart trip generation algorithms that distribute places, estimate budgets and suggest activities.</p></div>
+    </div>
+    <div class="obj-card reveal reveal-delay-2">
+      <div class="obj-num">03</div>
+      <div class="obj-text"><h4>Responsive Design</h4><p>Ensure the application works flawlessly across all screen sizes from mobile to widescreen desktop.</p></div>
+    </div>
+    <div class="obj-card reveal">
+      <div class="obj-num">04</div>
+      <div class="obj-text"><h4>User Experience</h4><p>Create an intuitive, frictionless flow that takes users from destination discovery to complete itinerary.</p></div>
+    </div>
+    <div class="obj-card reveal reveal-delay-1">
+      <div class="obj-num">05</div>
+      <div class="obj-text"><h4>Performance</h4><p>Optimize images, animations and code for fast load times with smooth 60fps interactions.</p></div>
+    </div>
+    <div class="obj-card reveal reveal-delay-2">
+      <div class="obj-num">06</div>
+      <div class="obj-text"><h4>Accessibility</h4><p>Follow web accessibility best practices with semantic HTML, ARIA labels and keyboard-navigable components.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" style="margin:0 5% 6rem">
+  <div>
+    <div class="cta-tag">✨ Ready to Explore?</div>
+    <h2>Start Planning Your<br>Dream Trip Today</h2>
+    <p>Explore destinations and let AI create your perfect itinerary.</p>
+  </div>
+  <div class="cta-actions">
+    <button class="btn btn-primary" onclick="goHome()">🌍 Explore Destinations</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2025 WANDR — Built with ❤️ for the End-Semester Project | All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="pages.js"></script>
+</body>
+</html>

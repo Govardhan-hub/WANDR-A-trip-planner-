@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Itinerary — WANDR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    body { 
+      padding-top: 64px; 
+    }
+    .itin-header {
+      background: linear-gradient(135deg, #0b1f3a 0%, #1a4480 60%, #1e65b8 100%);
+      padding: 64px 5% 48px; 
+      color: #ffff ; 
+      position: relative; 
+      overflow: hidden;
+    }
+    .itin-header::after {
+      content: '🗓️'; 
+      position: absolute; 
+      right: 5%; 
+      bottom: -1rem;
+      font-size: 128px; 
+      opacity: 0.06; 
+      pointer-events: none;
+    }
+    .itin-header-top { 
+      display: flex; 
+      align-items: flex-start; 
+      justify-content: space-between; 
+      flex-wrap: wrap; 
+      gap: 16px; 
+      margin-bottom: 32px; 
+    }
+    .itin-header h1 { 
+      font-family: 'Playfair Display', Georgia, serif; 
+      font-size: clamp(32px, 3.5vw, 40px); 
+      font-weight: 900; 
+      margin-bottom: 8px; 
+    }
+    .itin-header p { 
+      color: rgba(255,255,255,0.75); 
+    }
+    .itin-badge {
+      background: rgba(255,255,255,0.12); 
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2); 
+      color: #fdba74;
+      padding: 8px 16px; 
+      border-radius: 50px; 
+      font-size: 15px; 
+      font-weight: 600;
+      display: inline-block; 
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body id="itinerary-page">
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-logo" onclick="goHome()" style="cursor:pointer">🧭 WANDR</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+</nav>
+<div class="itin-header">
+  <div class="itin-badge">🤖 AI Generated Plan</div>
+  <div class="itin-header-top">
+    <div>
+      <h1>Your Personalized Itinerary</h1>
+      <p>Crafted by AI based on your preferences and selected destinations.</p>
+    </div>
+    <div class="itinerary-actions" style="margin-top:0">
+      <button class="btn btn-secondary" style="padding:0.6rem 1.25rem;font-size:0.88rem" onclick="downloadPDF()">📄 Download PDF</button>
+      <button class="btn btn-primary" style="padding:0.6rem 1.25rem;font-size:0.88rem" onclick="saveTrip()">💾 Save Trip</button>
+    </div>
+  </div>
+  <div class="trip-summary">
+    <div class="summary-item">
+      <div class="summary-icon">🌍</div>
+      <div class="summary-val" id="itin-country">—</div>
+      <div class="summary-key">Destination</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-icon">📅</div>
+      <div class="summary-val" id="itin-days">—</div>
+      <div class="summary-key">Duration</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-icon">👥</div>
+      <div class="summary-val" id="itin-travelers">—</div>
+      <div class="summary-key">Travelers</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-icon">💰</div>
+      <div class="summary-val" id="itin-budget">—</div>
+      <div class="summary-key">Est. Budget</div>
+    </div>
+    <div class="summary-item">
+      <div class="summary-icon">✈️</div>
+      <div class="summary-val" id="itin-type">—</div>
+      <div class="summary-key">Travel Style</div>
+    </div>
+  </div>
+</div>
+<section class="itinerary-page">
+  <div class="itinerary-wrapper">
+    <div class="itinerary-grid">
+      <div>
+        <div class="section-header" style="text-align:left;margin-bottom:2.5rem">
+          <div class="section-tag">Day-by-Day Plan</div>
+          <h2 class="section-title" style="font-size:1.8rem">Your Journey</h2>
+        </div>
+        <div class="timeline" id="timeline">
+        </div>
+      </div>
+      <div class="itinerary-sidebar">
+        <div class="sidebar-card reveal">
+          <h3>🏨 Recommended Hotels</h3>
+          <div id="hotels-list"><!-- injected --></div>
+        </div>
+
+        <!-- Budget Breakdown -->
+        <div class="sidebar-card reveal reveal-delay-1">
+          <h3>💰 Budget Breakdown</h3>
+          <div id="budget-breakdown"><!-- injected --></div>
+        </div>
+
+        <!-- Transport -->
+        <div class="sidebar-card reveal reveal-delay-2">
+          <h3>🚗 Getting Around</h3>
+          <div style="font-size:0.88rem;color:#64748b;line-height:1.7">
+            <p style="margin-bottom:0.75rem">🚇 Metro / Subway — Most economical for cities</p>
+            <p style="margin-bottom:0.75rem">🚕 Taxi / Cab — Comfortable and direct</p>
+            <p style="margin-bottom:0.75rem">🚌 Tourist Bus — Best for sightseeing routes</p>
+            <p>🚶 Walking — Many attractions are walkable</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Actions -->
+    <div style="text-align:center;padding:3rem 0 1rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-outline" onclick="goBack()">← Modify Trip</button>
+      <button class="btn btn-blue" onclick="downloadPDF()">📄 Download PDF</button>
+      <button class="btn btn-primary" onclick="saveTrip()">💾 Save Trip</button>
+      <button class="btn btn-secondary" style="background:#0b1f3a;color:white" onclick="goHome()">🏠 Back to Home</button>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-bottom">
+    <p>© 2025 WANDR — Built with ❤️ for the End-Semester Project</p>
+  </div>
+</footer>
+
+<script src="pages.js"></script>
+</body>
+</html>

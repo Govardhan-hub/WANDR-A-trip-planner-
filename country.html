@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Details — WANDR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+</head>
+<body id="country-page">
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-logo" onclick="goHome()" style="cursor:pointer">🧭 WANDR</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#categories">Categories</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Hero -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img id="country-hero-img" src="" alt="Country">
+  </div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="../index.html#destinations">Destinations</a>
+      <span class="sep">›</span>
+      <span id="country-breadcrumb">Country</span>
+    </div>
+    <h1 id="country-title">Japan</h1>
+    <p id="country-hero-desc">Loading...</p>
+    <div class="country-meta-badges">
+      <div class="meta-badge" id="country-best-time">🗓️ Best Time</div>
+      <div class="meta-badge" id="country-currency">💰 Currency</div>
+      <div class="meta-badge" id="country-lang">🗣️ Language</div>
+    </div>
+  </div>
+</section>
+
+<!-- Country Info -->
+<section class="country-info">
+  <div>
+    <div class="section-tag" style="margin-bottom:1.5rem">Country Overview</div>
+    <div class="info-grid">
+      <div class="info-card reveal">
+        <div class="info-icon">💰</div>
+        <div><div class="info-label">Currency</div><div class="info-value" id="info-currency">—</div></div>
+      </div>
+      <div class="info-card reveal reveal-delay-1">
+        <div class="info-icon">🗣️</div>
+        <div><div class="info-label">Language</div><div class="info-value" id="info-language">—</div></div>
+      </div>
+      <div class="info-card reveal reveal-delay-2">
+        <div class="info-icon">🗓️</div>
+        <div><div class="info-label">Best Time to Visit</div><div class="info-value" id="info-besttime">—</div></div>
+      </div>
+      <div class="info-card reveal reveal-delay-3">
+        <div class="info-icon">🍜</div>
+        <div><div class="info-label">Famous Food</div><div class="info-value" id="info-food">—</div></div>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-icon">📋</div>
+        <div><div class="info-label">Visa</div><div class="info-value" id="info-visa">—</div></div>
+      </div>
+      <div class="info-card reveal reveal-delay-1">
+        <div class="info-icon">⏰</div>
+        <div><div class="info-label">Time Zone</div><div class="info-value" id="info-timezone">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tips Sidebar -->
+  <div>
+    <div class="tips-card reveal">
+      <h3>✈️ Insider Travel Tips</h3>
+      <div id="country-tips"><!-- injected --></div>
+    </div>
+  </div>
+</section>
+
+<!-- Famous Places -->
+<section class="places-section">
+  <div class="section-header" style="text-align:left;margin: bottom 32px;">
+    <div class="section-tag">Must Visit</div>
+    <h2 class="section-title">Famous Places</h2>
+    <p class="section-sub" style="text-align:left;max-width:none">Select the places you'd like to visit and we'll build your personalized itinerary.</p>
+  </div>
+  <div class="places-grid" id="places-grid"><!-- injected --></div>
+
+  <!-- Proceed button -->
+  <div style="text-align:center;padding:32px 0">
+    <button class="btn btn-blue" onclick="proceedToTrip()" style="font: size 16px;;padding:16px 24px">
+      📅 Plan My Trip →
+    </button>
+  </div>
+</section>
+<!-- Footer -->
+<footer>
+  <div class="footer-bottom">
+    <p>© 2025 WANDR — Built with ❤️ for the End-Semester Project</p>
+  </div>
+</footer>
+
+<script src="pages.js"></script>
+</body>
+</html>

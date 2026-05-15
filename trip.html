@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trip Details — WANDR</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="pages.css">
+  <style>
+    body { 
+      padding-top: 90px; 
+    }
+    .trip-page-header {
+      background: linear-gradient(135deg, #0b1f3a, #1a4480);
+      color: #ffffff; 
+      text-align: center;
+      padding: 64px 5% 48px;
+    }
+    .trip-page-header h1 {
+      font-family: 'Playfair Display', Georgia, serif; 
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 900; 
+      margin-bottom: 12px;
+    }
+    .trip-page-header p { 
+      color: rgba(255,255,255,0.75); 
+      font-size: 16px; 
+    }
+    .trip-country-badge {
+      display: inline-flex; 
+      align-items: center;
+      background: rgba(255,255,255,0.15); 
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 16px; 
+      border-radius: 50px;
+      font-size: 16px; 
+      font-weight: 600; 
+      color: #ffffff;
+      margin-bottom: 24px;
+    }
+    .select-arrow {
+      position: relative;
+    }
+    .select-arrow::after {
+      content: '▾'; 
+      position: absolute; 
+      right: 16px; 
+      top: 50%;
+      transform: translateY(-50%); 
+      pointer-events: none; 
+      color: #64748b;
+    }
+  </style>
+</head>
+<body id="trip-page">
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="nav-logo" onclick="goHome()" style="cursor:pointer">🧭 WANDR</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#destinations">Destinations</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-toggle"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- Page Header -->
+<div class="trip-page-header">
+  <div class="trip-country-badge" id="trip-country-name">📍 Planning Your Trip</div>
+  <h1>Customize Your Trip</h1>
+  <p>Tell us your preferences and we'll generate a perfect AI-powered itinerary for you.</p>
+</div>
+
+<!-- Form -->
+<section class="trip-form-section">
+  <div class="form-card reveal">
+    <div class="form-title">✈️ Trip Preferences</div>
+    <div class="form-subtitle">Fill in the details below to generate your smart AI itinerary.</div>
+
+    <!-- Row 1: Days & Travelers -->
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">🗓️ Number of Days</label>
+        <input type="number" class="form-input" id="num-days" min="1" max="30" placeholder="e.g. 5" value="5">
+      </div>
+      <div class="form-group">
+        <label class="form-label">👥 Number of Travelers</label>
+        <input type="number" class="form-input" id="num-travelers" min="1" max="50" placeholder="e.g. 2" value="2">
+      </div>
+      <div class="form-group">
+        <label class="form-label">📅 Start Date</label>
+        <input type="date" class="form-input" id="start-date">
+      </div>
+      <div class="form-group">
+        <label class="form-label">🚗 Transportation Type</label>
+        <div class="select-arrow">
+          <select class="form-select" id="transport-type">
+            <option value="public">Public Transport</option>
+            <option value="taxi" selected>Taxi / Cab</option>
+            <option value="rental">Rental Car</option>
+            <option value="guided">Guided Tour Bus</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Budget -->
+    <div class="form-group" style="margin-bottom:1.5rem">
+      <label class="form-label">💰 Budget Level</label>
+      <div class="option-cards cols-3">
+        <div class="option-card" data-val="low" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">💵</div>
+          <div class="option-label">Budget</div>
+          <div class="option-desc">$30–80/day</div>
+        </div>
+        <div class="option-card active" data-val="medium" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">💳</div>
+          <div class="option-label">Standard</div>
+          <div class="option-desc">$80–200/day</div>
+        </div>
+        <div class="option-card" data-val="luxury" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">💎</div>
+          <div class="option-label">Luxury</div>
+          <div class="option-desc">$300+/day</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel Type -->
+    <div class="form-group" style="margin-bottom:1.5rem">
+      <label class="form-label">👫 Travel Type</label>
+      <div class="option-cards cols-4">
+        <div class="option-card active" data-val="solo" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">🧳</div>
+          <div class="option-label">Solo</div>
+        </div>
+        <div class="option-card" data-val="couple" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">💑</div>
+          <div class="option-label">Couple</div>
+        </div>
+        <div class="option-card" data-val="family" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">👨‍👩‍👧‍👦</div>
+          <div class="option-label">Family</div>
+        </div>
+        <div class="option-card" data-val="friends" onclick="this.closest('.option-cards').querySelectorAll('.option-card').forEach(c=>c.classList.remove('active'));this.classList.add('active')">
+          <div class="option-icon">🎉</div>
+          <div class="option-label">Friends</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel Preference -->
+    <div class="form-group full-width" style="margin-bottom:2rem">
+      <label class="form-label">🏨 Hotel Preference</label>
+      <div class="select-arrow">
+        <select class="form-select" id="hotel-pref">
+          <option value="hostel">Hostel / Budget Stay</option>
+          <option value="3star" selected>3-Star Hotel</option>
+          <option value="4star">4-Star Hotel</option>
+          <option value="5star">5-Star Luxury</option>
+          <option value="resort">Resort & Spa</option>
+          <option value="airbnb">Airbnb / Homestay</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="form-submit">
+      <button class="generate-btn" onclick="generateTrip()">
+        <span class="btn-icon">🤖</span>
+        Generate My WANDR Plan
+      </button>
+      <p style="margin-top:1rem;font-size:0.82rem;color:#64748b">
+        ✨ Our AI will analyze your preferences and create a personalized itinerary in seconds.
+      </p>
+    </div>
+  </div>
+
+  <!-- Back button -->
+  <div style="text-align:center;margin-top:2rem">
+    <button class="btn btn-outline" onclick="goBack()" style="color:#64748b;border-color:#cbd5e1">← Back to Destination</button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-bottom">
+    <p>© 2025 WANDR — Built with ❤️ for the End-Semester Project</p>
+  </div>
+</footer>
+
+<script src="pages.js"></script>
+</body>
+</html>

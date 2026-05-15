@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WANDR — Plan Your Dream Trip</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <span class="logo-icon">🧭</span>
+    WANDR
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#categories">Categories</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Plan Your <em>Dream</em><br>Vacation with AI</h1>
+    <p>Discover destinations, create smart itineraries, and explore the world effortlessly with personalized AI recommendations.</p>
+
+    <div class="hero-search">
+      <div class="search-wrapper">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="search-input" placeholder="Where do you want to go?" autocomplete="off">
+          <div class="search-divider"></div>
+          <select class="search-select" id="search-category">
+            <option value="">Any Category</option>
+            <option value="beaches">🏖️ Beaches</option>
+            <option value="mountains">🏔️ Mountains</option>
+            <option value="adventure">🧗 Adventure</option>
+            <option value="historical">🏛️ Historical</option>
+            <option value="snow">❄️ Snow</option>
+            <option value="wildlife">🦁 Wildlife</option>
+            <option value="honeymoon">💑 Honeymoon</option>
+            <option value="city">🌆 City Life</option>
+          </select>
+          <button class="search-btn" id="search-btn">Search ✈️</button>
+        </div>
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
+      
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat-item"><span class="stat-num">50+</span><span class="stat-label">Destinations</span></div>
+      <div class="stat-item"><span class="stat-num">10k+</span><span class="stat-label">Happy Travelers</span></div>
+      <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">AI Itineraries</span></div>
+      <div class="stat-item"><span class="stat-num">4.9★</span><span class="stat-label">User Rating</span></div>
+    </div>
+  </div>
+</section>
+<section class="features-section section">
+  <div class="section-header">
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-title">Travel Smarter with AI</h2>
+    <p class="section-sub">Everything you need for a seamless, unforgettable journey — powered by artificial intelligence.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">🤖</div>
+      <h3>AI Itinerary Builder</h3>
+      <p>Our AI generates personalized day-by-day plans based on your preferences, budget, and travel style.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">💰</div>
+      <h3>Smart Budget Planner</h3>
+      <p>Get accurate budget estimates including hotels, flights, food and activities — no surprises.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-3">
+      <div class="feature-icon">🗺️</div>
+      <h3>Curated Destinations</h3>
+      <p>Handpicked places, hidden gems and must-see landmarks vetted by seasoned travelers.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-1">
+      <div class="feature-icon">⚡</div>
+      <h3>Instant Planning</h3>
+      <p>Generate a complete travel plan in seconds — no more hours of research and tab-switching.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-2">
+      <div class="feature-icon">🏨</div>
+      <h3>Hotel Recommendations</h3>
+      <p>AI-matched accommodations that fit your budget, style and location preferences perfectly.</p>
+    </div>
+    <div class="feature-card reveal reveal-delay-3">
+      <div class="feature-icon">📱</div>
+      <h3>Mobile-First Design</h3>
+      <p>Access your travel plans anywhere, anytime. Our responsive design works beautifully on any device.</p>
+    </div>
+  </div>
+</section>
+<section class="categories-section" id="categories">
+  <div class="section-header">
+    <div class="section-tag">Browse by Type</div>
+    <h2 class="section-title">Explore by Category</h2>
+    <p class="section-sub">Find your perfect travel style — from sun-soaked beaches to snowy peaks.</p>
+  </div>
+<div class="categories-grid">
+
+  <div class="category-card" onclick="filterCategory('beaches')">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80">
+    <div class="category-text">
+      <div>🏖️</div>
+      <h3>Beaches</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('mountains')">
+    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80">
+    <div class="category-text">
+      <div>🏔️</div>
+      <h3>Mountains</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('adventure')">
+    <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&q=80">
+    <div class="category-text">
+      <div>🧗</div>
+      <h3>Adventure</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('historical')">
+    <img src="https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80">
+    <div class="category-text">
+      <div>🏛️</div>
+      <h3>Historical</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('snow')">
+    <img src="https://images.unsplash.com/photo-1551582045-6ec9c11d8697?w=600&q=80">
+    <div class="category-text">
+      <div>❄️</div>
+      <h3>Snow</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('wildlife')">
+    <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80">
+    <div class="category-text">
+      <div>🦁</div>
+      <h3>Wildlife</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('honeymoon')">
+    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=80">
+    <div class="category-text">
+      <div>💑</div>
+      <h3>Honeymoon</h3>
+    </div>
+  </div>
+
+  <div class="category-card" onclick="filterCategory('city')">
+    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80">
+    <div class="category-text">
+      <div>🌆</div>
+      <h3>City Life</h3>
+    </div>
+  </div>
+
+</div>
+</section>
+<div class="filter-result" id="filter-result">
+  <div style="padding:0 0 32px">
+    <div class="filter-header">
+      <h2 id="filter-title">Results</h2>
+      <button class="filter-close" onclick="closeFilter()">✕</button>
+    </div>
+    <div class="countries-grid" id="filter-countries-grid"></div>
+  </div>
+</div>
+<div class="cta-section">
+  <div>
+    <div class="cta-tag">✨ Start Planning Today</div>
+    <h2>Your Dream Trip is<br>Just a Few Clicks Away</h2>
+    <p>Let AI handle the logistics while you focus on the adventure.</p>
+  </div>
+  <div class="cta-actions">
+    <button class="btn btn-primary" onclick="goAbout()">Learn More →</button>
+    <button class="btn btn-secondary" onclick="document.getElementById('categories').scrollIntoView({behavior:'smooth'})">Browse Destinations</button>
+  </div>
+</div>
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="nav-logo">🧭 WANDR</div>
+      <p>Your intelligent travel companion — helping you wander the world with smart, personalized itineraries.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">𝕏</a>
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">📸</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#categories">Destinations</a>
+      <a href="#categories">Categories</a>
+      <a href="about.html">About Project</a>
+      <a href="#">Blog</a>
+    </div>
+    <div class="footer-col">
+      <h4>Plan</h4>
+      <a href="#">AI Itinerary</a>
+      <a href="#">Budget Planner</a>
+      <a href="#">Hotels</a>
+      <a href="#">Travel Tips</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="#">📧 hello@wandr.com</a>
+      <a href="#">📞 +1 (800) 123-4567</a>
+      <a href="#">📍 Kerala, India</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 WANDR — Built with ❤️ for the End-Semester Project | All Rights Reserved</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
