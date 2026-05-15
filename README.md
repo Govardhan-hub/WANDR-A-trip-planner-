@@ -1,6 +1,6 @@
 # 🌍 WANDR — Smart Travel Planner Website
 
-## ✨ About The Project
+##  About The Project
 
 WANDR is a dynamic travel planning website built using HTML, CSS, and JavaScript. The project helps users explore destinations, select tourist places, and generate a personalized day-by-day travel itinerary dynamically.
 
@@ -15,21 +15,21 @@ Unlike static travel websites, WANDR dynamically creates trip plans based on the
 
 ---
 
-# 🚀 Features
+#  Features
 
-- 🌎 Explore travel destinations
-- 🔍 Live destination search
-- 🏖️ Category-based destination filtering
-- 📍 Dynamic country pages
-- 🧳 Personalized trip planner
-- 🗓️ Dynamic itinerary generation
-- 💰 Budget calculation system
-- 🏨 Hotel recommendations
-- 🌙 Dark / Light mode
-- 📱 Fully responsive design
-- ✨ Scroll reveal animations
-- 💾 Session storage support
-- 🎨 Interactive modern UI
+-  Explore travel destinations
+-  Live destination search
+-  Category-based destination filtering
+-  Dynamic country pages
+-  Personalized trip planner
+-  Dynamic itinerary generation
+-  Budget calculation system
+-  Hotel recommendations
+-  Dark / Light mode
+-  Fully responsive design
+-  Scroll reveal animations
+-  Session storage support
+-  Interactive modern UI
 
 ---
 
@@ -54,7 +54,7 @@ Unlike static travel websites, WANDR dynamically creates trip plans based on the
 
 ---
 
-# 📂 Project Structure
+#  Project Structure
 
 ## Main Files
 
@@ -105,7 +105,7 @@ Styling for:
 
 ---
 
-# ⚙️ How The Trip Planner Works
+#  How The Trip Planner Works
 
 1. User selects a country
 2. User selects tourist places
@@ -121,7 +121,7 @@ Styling for:
 
 ---
 
-# 🧠 Dynamic Timeline Generation
+#  Dynamic Timeline Generation
 
 The itinerary timeline is generated dynamically using JavaScript loops.
 
@@ -144,7 +144,7 @@ timeline.innerHTML = html;
 
 ---
 
-# ⚔️ Challenges Faced
+#  Challenges Faced
 
 ## 1. Dynamic Itinerary Generation
 Generating a complete itinerary dynamically based on selected places and trip duration was one of the biggest challenges.
@@ -163,7 +163,7 @@ Maintaining proper UI visibility and color contrast in both dark and light theme
 
 ---
 
-# 📚 What I Learned
+#  What I Learned
 
 Through this project I learned:
 - Real-world JavaScript development
@@ -179,7 +179,7 @@ Through this project I learned:
 
 ---
 
-# 🔮 Future Improvements
+#  Future Improvements
 
 Future enhancements planned:
 - Backend integration
@@ -193,13 +193,11 @@ Future enhancements planned:
 
 ---
 
-# 👨‍💻 Author
+#  Team Members 
 
-**Govardhan Bavisetti**  
-Computer Science and Engineering Student
-
+**Govardhan,Sathvik,Vikrant,Shusanth**  
 ---
 
-# 📌 Final Note
+#  Final Note
 
 This project was built as a frontend learning project to improve my understanding of JavaScript, responsive web design, and dynamic UI generation. It helped me understand how real-world interactive travel websites are designed and implemented.
